@@ -1,0 +1,22 @@
+{
+  "name": "cypresse2e",
+  "version": "1.0.0",
+  "description": "This is automation testing project for cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:headless": "cypress run --headless"
+
+  },
+  "author": "Yukti",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "cypress": "^14.3.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.7.0"
+  }
+}

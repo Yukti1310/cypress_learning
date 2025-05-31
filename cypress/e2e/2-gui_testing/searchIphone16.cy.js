@@ -18,7 +18,6 @@ describe("Search Iphone 16 on Amazon", () => {
     it("Find iphone with cheapest rate", () => {
         const cheapest = 0;
         // cy.get("[role='listitem'] [data-cy='price-recipe'] [data-a-color='base'] .a-offscreen").should('exist');
-        cy.log("abc")
         cy.url().then(($url) => {
             expect($url).to.contain("iphone")
             assert.include($url, "iphone")

@@ -2,6 +2,9 @@
 cypress/videos/
 cypress/screenshots/
 cypress/downloads/
+allure-results/
+cypress/reports/
+
 
 # Node.js
 node_modules/

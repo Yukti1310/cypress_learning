@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import {homePage} from "../../support/pageObjects/homePage";
+
 describe("Verify basics of amazon.in", () => {
 
     before("Navigate to Page", () => {

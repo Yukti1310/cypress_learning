@@ -1,5 +1,5 @@
 /// reference types ="cypress"/>
-
+import { OK_STATUS_CODE } from "../utilities/misc";
 const Ajv = require('ajv');
 const schemaValidator = new Ajv();
 describe("Parsing Json Response", () => {
@@ -11,7 +11,7 @@ describe("Parsing Json Response", () => {
                 "page": 2
             }
         }).then((response) => {
-            expect(response.status).to.equal(200);
+            expect(response.status).to.equal(OK_STATUS_CODE);
             var schema = {
                 "$schema": "http://json-schema.org/draft-07/schema#",
                 "title": "Generated schema for Root",

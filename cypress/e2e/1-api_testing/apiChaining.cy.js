@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+import { OK_STATUS_CODE,NO_CONTENT } from "../utilities/misc";
+
+
 describe("API Chaining", () => {
 
     it("GET", () => {
@@ -10,7 +13,7 @@ describe("API Chaining", () => {
                 "page": 2
             },
         }).then((response) => {
-            expect(response.status).to.eq(200);
+            expect(response.status).to.eq(OK_STATUS_CODE);
             const id = response.body.data[0].id;
             cy.log(id);
             cy.request({
@@ -22,7 +25,7 @@ describe("API Chaining", () => {
                 }
             })
                 .then((response) => {
-                    expect(response.status).to.eq(200);
+                    expect(response.status).to.eq(OK_STATUS_CODE);
                     cy.log(JSON.stringify(response.body));
 
                     cy.request({
@@ -33,7 +36,7 @@ describe("API Chaining", () => {
                             "x-api-key": "reqres-free-v1"
                         }
                     }).then((response) => {
-                        expect(response.status).to.eq(204);
+                        expect(response.status).to.eq(NO_CONTENT);
                         cy.request({
                             method: "GET",
                             url: `https://reqres.in/api/users/${id}`,
@@ -43,7 +46,7 @@ describe("API Chaining", () => {
                             }
                         })
                             .then((response) => {
-                                expect(response.status).to.eq(200);
+                                expect(response.status).to.eq(OK_STATUS_CODE);
                                 cy.log(JSON.stringify(response.body));
                             })
                     })

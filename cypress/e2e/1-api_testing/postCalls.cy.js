@@ -1,5 +1,6 @@
 ///refernce types="cypress" />
 import { faker } from '@faker-js/faker'
+import { CREATED } from "../utilities/misc";
 
 describe('Post Calls', () => {
     it("Post Call with hard coded values", () => {
@@ -18,7 +19,7 @@ describe('Post Calls', () => {
                 },
                 body: requestBody
             }).then((response) => {
-                expect(response.status).equal(201);
+                expect(response.status).equal(CREATED);
                 expect(response.body.email).to.include('eve.holt@reqres.in')
             })
     });
@@ -56,7 +57,7 @@ describe('Post Calls', () => {
                     },
                     body: requestBody
                 }).then((response) => {
-                    expect(response.status).equal(201);
+                    expect(response.status).equal(CREATED);
                     expect(response.body.email).to.include('eve.holt@reqres.in')
                     expect(response.body).has.property('email', requestBody.email)
                 })
@@ -77,7 +78,7 @@ describe('Post Calls', () => {
             },
             body: requestBody
         }).then((response) => {
-            expect(response.status).equal(201),
+            expect(response.status).equal(CREATED),
                 expect(response.body.email).to.equal(requestBody.email)
         });
     })

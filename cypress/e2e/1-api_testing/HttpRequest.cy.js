@@ -1,4 +1,5 @@
 /// <reference types="cypress"/>
+import { OK_STATUS_CODE, CREATED, NO_CONTENT } from "../utilities/misc";
 
 describe("Verify HTTP Request", () => {
     it("GET Request", () => {
@@ -17,7 +18,7 @@ describe("Verify HTTP Request", () => {
                 email: "eve.holt@reqres.in",
                 password: "pistol"
             }
-        }).its('status').should('eq', 201)
+        }).its('status').should('eq', CREATED);
     });
 
     it('PUT Request', () => {
@@ -34,7 +35,7 @@ describe("Verify HTTP Request", () => {
                 job: "zion resident"
 
             }
-        }).its('status').should('equal', 200)
+        }).its('status').should('equal', OK_STATUS_CODE);
     });
 
     it('DELETE Request', () => {
@@ -46,7 +47,7 @@ describe("Verify HTTP Request", () => {
                     "x-api-key": "reqres-free-v1"
                 }
             }
-        ).its('status').should('equal', 204);
+        ).its('status').should('equal', NO_CONTENT);
     })
 
 })

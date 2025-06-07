@@ -1,6 +1,6 @@
 describe("Search Iphone 16 on Amazon", () => {
     beforeEach("Navigate to Amazon", () => {
-        cy.visit("https://www.amazon.in/");
+        cy.visit("/");
         cy.get("#twotabsearchtextbox").clear().type("iphone 16");
         cy.get("#nav-search-submit-button").click();
         cy.url().then(($url) => {

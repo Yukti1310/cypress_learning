@@ -1,11 +1,9 @@
 /// <reference types="cypress" />
 
-import {homePage} from "../../support/pageObjects/homePage";
-
 describe("Verify basics of amazon.in", () => {
 
     before("Navigate to Page", () => {
-        cy.visit("https://www.amazon.in/");
+        cy.visit("/");
     })
     it("verify title of amazon.in", () => {
 
@@ -14,7 +12,7 @@ describe("Verify basics of amazon.in", () => {
     });
 
     it("Verify searchBar is present", () => {
-        cy.visit("https://www.amazon.in/");
+        cy.visit("/");
         cy.get("#twotabsearchtextbox").should('be.visible')
         cy.get("#twotabsearchtextbox").type("Iphone");
         cy.get("#twotabsearchtextbox").should('have.value', "Iphone");
@@ -27,7 +25,7 @@ describe("Verify basics of amazon.in", () => {
     })
 
     it.only("Search Iphone 16", () => {
-        cy.visit("https://www.amazon.in/");
+        cy.visit("/");
         cy.get("#twotabsearchtextbox").clear();
         cy.get("#twotabsearchtextbox").type("iphone 16");
         // cy.get("[id*='sac-suggestion-row'] div[id*='cell-1'] div[role=button]")

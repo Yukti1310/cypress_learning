@@ -1,7 +1,7 @@
 describe("Search 1 Item from Fixture on Amazon", () => {
 
     beforeEach("Navigate to Amazon", () => {
-        cy.visit("https://www.amazon.in/");
+        cy.visit("/");
         cy.fixture("searchItems.json").then((data) => {
             cy.get("#twotabsearchtextbox").clear().type(data.items[0]);
             cy.get("#nav-search-submit-button").click();
@@ -21,7 +21,7 @@ describe("Search 1 Item from Fixture on Amazon", () => {
 
 describe("Search Every Items from Fixture on Amazon", () => {
     it("Search for Items from fixtures", () => {
-        cy.visit("https://www.amazon.in/");
+        cy.visit("/");
 
         cy.fixture("searchItems.json").then((data) => {
 

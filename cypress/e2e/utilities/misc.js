@@ -19,4 +19,6 @@ export const ELEMENT_STATE = {
     NOT_EXISTS: 'not.exist',
     HAVE_TEXT: 'have.text',
     HAVE_VALUE: 'have.value',
+    HAVE_LENGTH: 'have.length',
+    CONTAINS: 'contain.text',
 }   

@@ -12,6 +12,7 @@ module.exports = defineConfig({
   },
   e2e: {
     baseUrl: 'https://www.amazon.in',
+    specPattern: "cypress/e2e/**/*.cy.js",
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
 
